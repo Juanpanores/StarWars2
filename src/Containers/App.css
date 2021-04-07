@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Barna Break Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Barna Break Regular'), url('Barna Break.woff') format('woff');
+  }
+
+h1 {
+  font-family: 'Barna Break Regular';
+  color: #FFD700;
+}
+
+.graveyard{
+  left:100%
+}
+
+.deck { transition: all .2s ease-in-out; }
+.deck:hover { transform: scale(1.1); }
+
+
+.card{ transition: all .2s ease-in-out; }
+.card:hover { transform: scale(3) translateY(-35px) }
+
+.cards{
+  display: flex;
+  align-items: flex-end;
+  height: 500px;
+  width: 100%;
+}
+
+button{
+  background: url('../Components/Boton.png');
+  color: whitesmoke;
+  border-color: white;
+  font-weight: 500;
+  
+}
+
+.particles{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#parent{
+  position: relative
+}
+
+h2{
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  font-size: 9px;
+  color: white
+}
