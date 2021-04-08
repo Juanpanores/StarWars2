@@ -1,17 +1,16 @@
 import React from 'react';
-import Card from './Card';
+import Card from './Card.js';
 
 const CardList = ({characters}) => {
-    console.log("hola");
     return(
-        <div>
+        <div className='hand'>
             {
-                characters.map((user,i) =>{
-                    return ( 
-                        <Card 
+            characters.map((user,i) =>{
+                return ( 
+                    <Card 
                         key={i} 
-                        name={characters[i].name} 
-                        birth_year={characters[i].birth_year}
+                        name={user.name} 
+                        birth_year={user.birth_year}
                         /> 
                     )
                 })
