@@ -3,48 +3,26 @@
   font-style: normal;
   font-weight: normal;
   src: local('Barna Break Regular'), url('Barna Break.woff') format('woff');
-  grid-template-columns: 12px 12px 12px 12px;
-  grid-template-rows: 12px 12px 12px 12px;
   }
+
+.wrapper{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 1fr 1fr 1fr;
+}
 
 h1 {
   font-family: 'Barna Break Regular';
   color: #FFD700;
 }
 
-input{
-  position: absolute;
-}
-.graveyard{
-  justify-content: end;
-}
+.title{
+  grid-column: 1/9;
+  grid-row:1/2;
 
-
-.deck{
-  width:15rem
-  
 }
 
-.deck { transition: all .2s ease-in-out; }
-.deck:hover { transform: scale(1.1); }
-
-
-
-
-.player_board{
-  display: flex;
-  align-items: flex-end;
-  height: 500px;
-  width: 100%;
-}
-
-button{
-  background: url('../Components/Boton.png');
-  color: whitesmoke;
-  border-color: white;
-  font-weight: 500;
-  
-}
 
 .particles{
   position: fixed;
@@ -55,34 +33,86 @@ button{
   z-index: -1;
 }
 
+.deck{
+  grid-column: 1/2;
+  grid-row: 2/4;
+  width: auto;
+}
+
+.dcenter{
+  width: 200px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deckgrow { transition: all .2s ease-in-out; }
+.deckgrow:hover { transform: scale(1.1); }
+
+.graveyard{
+  grid-column: 8/9;
+  grid-row: 2/4;
+  width:auto;
+
+}
+
+.grave{
+  width: 200px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
 
 .hand{
-  align-items: center;
-  z-index: +10;
+  text-align:center;
+  grid-column: 2/8;
+  grid-row: 3/4;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.card{
+  position: relative;
+  width: 114px;
+  height: 166px;
+  background-image: url("https://e1.pngegg.com/pngimages/558/734/png-clipart-jp-ygo-series-2-devamped-blanks-black-yu-gi-oh-dueling-card-thumbnail.png");
+background-size: 100%;
+}
 
 .cardname{
-  position: absolute; 
-  top: 10%; 
-  left: 24%; 
+  position:absolute;
+  top: 1%; 
+  left: 10%; 
   width: 80%;
-  font-size: 9px; 
+  font-size: 8px; 
   color: white
 }
-.card{
-  width: 9rem;
-  position: relative;
-  z-index: 3000;
-}
-
-.card{ transition: all .2s ease-in-out; }
-.card:hover { transform: scale(2) translateY(-70px)}
 
 .cardtext{
-  position: absolute; 
-  top: 76.5%; 
-  left: 24%; 
+  position: absolute;
+  top: 81%; 
+  left: 10%; 
+  width: 60px;
+  height: 23px;
+  font-size: 1px; 
+  color: white
+}
+
+.atack{
+  position: absolute;
+  top: 84%;
+  left: 69%;
+  width: 80px;
+  height: 100px;
+  font-size: 1px; 
+  color: white
+}
+
+.defense{
+  position: absolute;
+  top: 89%;
+  left: 69%;
   width: 80px;
   height: 100px;
   font-size: 1px; 
@@ -90,6 +120,13 @@ button{
 }
 
 
-.graveyard{
-  
+.card{ transition: all .2s ease-in-out; }
+.card:hover { transform: scale(2) translateY(-70px)}
+
+.encounter{
+  text-align:center;
+  grid-column: 2/8;
+  grid-row: 2/3;
+  margin-left: auto;
+  margin-right: auto;
 }

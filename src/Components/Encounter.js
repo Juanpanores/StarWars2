@@ -1,16 +1,16 @@
 import React from 'react';
 import Card from './Card.js';
 
-const CardList = ({handCards,pickCard}) => {
+const Encounter = ({fighter}) => {
     return(
-        <div className='hand'>
+        <div className='encounter'>
             {
-            handCards.map((user,i) =>{
+            fighter.map((user,i) =>{
                 return ( 
-                    <Card 
+                    <Card
+                        key={i}
                         user={user}
                         name={user.name}
-                        pickCard={pickCard}
                         /> 
                     )
                 })
@@ -19,4 +19,4 @@ const CardList = ({handCards,pickCard}) => {
     );
 }   
 
-export default CardList;
+export default Encounter;
