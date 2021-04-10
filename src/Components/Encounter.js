@@ -11,6 +11,8 @@ const Encounter = ({fighter}) => {
                         key={i}
                         user={user}
                         name={user.name}
+                        attack={user.skin_color}
+                        defense={user.eye_color}
                         /> 
                     )
                 })

@@ -10,6 +10,8 @@ const CardList = ({handCards,pickCard}) => {
                     <Card 
                         user={user}
                         name={user.name}
+                        attack={user.skin_color}
+                        defense={user.eye_color}
                         pickCard={pickCard}
                         /> 
                     )
