@@ -94,7 +94,7 @@ function App() {
       }
 
       setNewCardsInHand(newCardsInHand.concat(survivors))
-      setGraveyard(graveyard.concat(deaths))
+      setGraveyard(deaths)
       setFight([]);
       
     }
