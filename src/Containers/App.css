@@ -15,11 +15,18 @@
 h1 {
   font-family: 'Barna Break Regular';
   color: #FFD700;
+  margin-bottom:0;
+}
+h2 {
+  font-family: 'Barna Break Regular';
+  color: #FFD700;
+  margin:0;
 }
 
 .title{
   grid-column: 1/9;
   grid-row:1/2;
+  margin-bottom:0;
 
 }
 

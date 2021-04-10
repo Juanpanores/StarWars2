@@ -113,7 +113,9 @@ function App() {
   (
       <div className="wrapper">
         <Particles className='particles' /> 
-          <div className='title'><h1 className='f-headline mt4 mb3 tc'>STAR WARS</h1></div>
+          <div className='title'><h1 className='f-headline mt4 mb0 tc'>STAR WARS</h1>
+          <h2 className='f-4  tc'>by Juanpa Nores</h2>
+          </div>
             <Deck pickUpCards={onPickUpCard}/>
             <CardList handCards={newCardsInHand} pickCard={onPickFighter}/> {/*se podría reutilizar para encounter */}
             <Encounter fighter={fighter}/>
