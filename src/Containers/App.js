@@ -41,9 +41,9 @@ function App() {
       console.log(pickup)
       if (pickup> deck.length){
         pickup= deck.length
-        console.log(pickup)
       }
-      
+      console.log(deck.length)
+      console.log(pickup)
       console.log(deck.length)
           setNewCardsInHand(newCardsInHand.concat(deck.slice(0,pickup).filter((el) => !fighter.includes(el))));
     }
@@ -65,7 +65,7 @@ function App() {
     if (fighter.length===2) {
       setTimeout(() => {
         setMatch(true)
-      }, 1500); 
+      }, 1000); 
     }
   },[fighter])
 
@@ -108,7 +108,7 @@ function App() {
 
   console.log(fighter)
 
-  return !deck.length ?
+  return (deck.length===0 && newCardsInHand.length===0) ?
   <h1 className='tc loading'>LOADING</h1>:
   (
       <div className="wrapper">
