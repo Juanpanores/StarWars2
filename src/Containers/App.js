@@ -6,7 +6,7 @@ import Graveyard from '../Components/Graveyard.js';
 import './App.css';
 import Particles from 'react-particles-js';
 import Music from '../Components/Music.mp3';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 
 function App() {
@@ -19,18 +19,14 @@ function App() {
 
 
   useEffect(() => {
-    fetch('https://swapi.dev/api/people/')
+    fetch('http://swapi.py4e.com/api/people/')
     .then(response => response.json())
     .then(people=> {setDeck(people.results.sort(() => 0.5 - Math.random()))});
-    var sound = new Howl({
+    let sound = new Howl({
       src: [Music],
       autoplay: true,
       loop: true,
       volume: 0.5,
-      onend: function() {
-        console.log('Finished!');
-      }
-
     });
   },[])
 
@@ -38,26 +34,22 @@ function App() {
   const onPickUpCard = (event) => {
     if (deck.length>0)  {
       let pickup=5-newCardsInHand.length;
-      console.log(pickup)
       if (pickup> deck.length){
         pickup= deck.length
       }
-      console.log(deck.length)
-      console.log(pickup)
-      console.log(deck.length)
-          setNewCardsInHand(newCardsInHand.concat(deck.slice(0,pickup).filter((el) => !fighter.includes(el))));
+      console.log("Cards to pick: ",pickup)
+      if (!match){
+          setNewCardsInHand(newCardsInHand.concat(deck.slice(0,pickup)));
+          deck.splice(0,pickup)
+          setDeck(deck);
+      }
     }
   }
-
-  useEffect(() => {
-    setDeck(deck.filter((el) => !newCardsInHand.includes(el)))
-  },[newCardsInHand])
-
+  console.log(deck)
   const onPickFighter = (event) => { 
     if (fighter.length<2 ) {
     setFight(fighter.concat(event));
     }
-    
   }
   
   useEffect(() => {
@@ -106,9 +98,12 @@ function App() {
   },[graveyard])
 
 
-  console.log(fighter)
+  console.log("Cards in deck ",deck.length)
+  console.log("Cards in hand ",newCardsInHand.length)
 
-  return (deck.length===0 && newCardsInHand.length===0) ?
+  return (deck.length===0 && newCardsInHand.length===1 && fighter.length===0) ?
+  <h3 className='tc win'>YOU WIN!</h3>:
+  (deck.length===0 && newCardsInHand===0)?
   <h1 className='tc loading'>LOADING</h1>:
   (
       <div className="wrapper">

@@ -8,6 +8,7 @@ const CardList = ({handCards,pickCard}) => {
             handCards.map((user,i) =>{
                 return ( 
                     <Card 
+                        key={i}
                         user={user}
                         name={user.name}
                         attack={user.skin_color}
