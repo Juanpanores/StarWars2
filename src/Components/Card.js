@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Card = ({user,name,pickCard,attack,defense}) => {
+const Card = ({user,name,pickCard,attack,defense,onboard}) => {
+    let onboardd = onboard ? 'scaled dib br2 tl': 'card dib ma2 br2 tl'
     return(
-        <div className='dib ma2 card br2 tl' onClick={() => pickCard(user)} >
+        <div className={onboardd} onClick={() => pickCard(user)} >
 
             <h2 className='cardname '>{name}</h2>
             <p className='cardtext '>   

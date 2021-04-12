@@ -13,6 +13,7 @@ const Encounter = ({fighter}) => {
                         name={user.name}
                         attack={user.skin_color}
                         defense={user.eye_color}
+                        onboard={true}
                         /> 
                     )
                 })

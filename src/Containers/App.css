@@ -109,6 +109,18 @@ h2 {
   background-size: 100%;
 }
 
+.scaled{
+  position: relative;
+  width: 114px;
+  height: 166px;
+  background-image: url("https://e1.pngegg.com/pngimages/558/734/png-clipart-jp-ygo-series-2-devamped-blanks-black-yu-gi-oh-dueling-card-thumbnail.png");
+  background-size: 100%;
+  transform: scale(1.5);
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+
 .cardname{
   position:absolute;
   top: 7%; 

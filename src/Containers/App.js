@@ -21,49 +21,47 @@ function App() {
   useEffect(() => {
     fetch('http://swapi.py4e.com/api/people/')
     .then(response => response.json())
-    .then(people=> {setDeck(people.results.sort(() => 0.5 - Math.random()))});
-    let sound = new Howl({
+    .then(people=> {setDeck(people.results.sort(() => 0.5 - Math.random()))}); // brings the SWAPI structure and shuffles the deck
+    let sound = new Howl({                                                     //music player
       src: [Music],
       autoplay: true,
       loop: true,
-      volume: 0.5,
+      volume: 0.2,
     });
   },[])
 
   
   const onPickUpCard = (event) => {
-    if (deck.length>0)  {
-      let pickup=5-newCardsInHand.length;
-      if (pickup> deck.length){
+    if (deck.length>0)  {                   
+      let pickup=5-newCardsInHand.length;     //calculets how many cards to pick up
+      if (pickup> deck.length){               //avoids the situation to pick up more cards than there is in the deck
         pickup= deck.length
       }
       console.log("Cards to pick: ",pickup)
-      if (!match){
-          setNewCardsInHand(newCardsInHand.concat(deck.slice(0,pickup)));
-          deck.splice(0,pickup)
+          setNewCardsInHand(newCardsInHand.concat(deck.slice(0,pickup)));  //set the cards in the hand
+          deck.splice(0,pickup)                                            //Removes picked up cards from the deck
           setDeck(deck);
-      }
     }
   }
   console.log(deck)
   const onPickFighter = (event) => { 
-    if (fighter.length<2 ) {
+    if (fighter.length<2 ) {                        //to prevent selecting more than 2 fighters
     setFight(fighter.concat(event));
     }
   }
   
   useEffect(() => {
-    setNewCardsInHand(newCardsInHand.filter((el) => !fighter.includes(el)));
+    setNewCardsInHand(newCardsInHand.filter((el) => !fighter.includes(el)));  //removes fighters from hand
     if (fighter.length===2) {
       setTimeout(() => {
-        setMatch(true)
-      }, 1000); 
+        setMatch(true)                                                        //starts the match fase
+      }, 1500); 
     }
   },[fighter])
 
   useEffect(() => {
     if (fighter.length===2) {
-    const health1= fighter[0].eye_color.length- fighter[1].skin_color.length;
+    const health1= fighter[0].eye_color.length- fighter[1].skin_color.length;  //attack is the number of letes of skin color and deffense the eye color
     const health2= fighter[1].eye_color.length - fighter[0].skin_color.length;
     const deaths=[];
     const survivors=[];
@@ -76,7 +74,7 @@ function App() {
         console.log("1 lives")
       }
 
-      if(health2 <=0 ) {
+      if(health2 <=0 ) {  
         console.log(health1)
         deaths.push(fighter[1]);
         console.log("winner " ,fighter[0].name)
@@ -85,25 +83,25 @@ function App() {
         console.log("2 lives")
       }
 
-      setNewCardsInHand(newCardsInHand.concat(survivors))
-      setGraveyard(deaths)
-      setFight([]);
+      setNewCardsInHand(newCardsInHand.concat(survivors))  //sets the surviving cards back in the hand
+      setGraveyard(deaths)                                 //put dead cards in the graveyard
+      setFight([]);                                        //clear fighters from the encounter
       
     }
   },[match])
 
 
   useEffect(() => {
-      setMatch(false)
+      setMatch(false)                                     //ends the fighting phase
   },[graveyard])
 
 
   console.log("Cards in deck ",deck.length)
   console.log("Cards in hand ",newCardsInHand.length)
 
-  return (deck.length===0 && newCardsInHand.length===1 && fighter.length===0) ?
-  <h3 className='tc win'>YOU WIN!</h3>:
-  (deck.length===0 && newCardsInHand===0)?
+  return (deck.length===0 && newCardsInHand.length===1 && fighter.length===0) ?   //sets the winning status
+  <h3 className='tc win'>YOU WIN!</h3>:   
+  (deck.length===0 && newCardsInHand===0)?                                        //sets the loading status
   <h1 className='tc loading'>LOADING</h1>:
   (
       <div className="wrapper">
@@ -112,7 +110,7 @@ function App() {
           <h2 className='f-4  tc'>by Juanpa Nores</h2>
           </div>
             <Deck pickUpCards={onPickUpCard}/>
-            <CardList handCards={newCardsInHand} pickCard={onPickFighter}/> {/*se podría reutilizar para encounter */}
+            <CardList handCards={newCardsInHand} pickCard={onPickFighter}/>   
             <Encounter fighter={fighter}/>
             <Graveyard grave={graveyard}/>
       </div>
