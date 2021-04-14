@@ -1,11 +1,10 @@
 import React from 'react'
 
-const Card = ({user,name,pickCard,attack,defense,onboard}) => {
-    let onboardd = onboard ? 'scaled dib br2 tl': 'card dib ma2 br2 tl'
+const Card = ({user,name,pickCard,attack,defense,onboard,grave}) => {
     return(
-        <div className={onboardd} onClick={() => pickCard(user)} >
+        <div className='card dib ma2 br2 tl' onClick={() => pickCard(user)} >
 
-            <h2 className='cardname '>{name}</h2>
+            <h2 className='cardname'>{name}</h2>
             <p className='cardtext '>   
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </p>

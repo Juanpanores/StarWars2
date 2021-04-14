@@ -14,6 +14,7 @@ const Graveyard = ({grave}) => {
                         grave.map((user,i) =>{
                             return ( 
                                 <Card 
+                                    key={i}
                                     user={user}
                                     name={user.name}
                                     attack={user.skin_color}

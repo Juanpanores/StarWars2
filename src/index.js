@@ -8,7 +8,9 @@ import 'tachyons';
 
 
 ReactDOM.render(
+  <HashRouter basename="/">
     <App />
+  </HashRouter>
     ,
   document.getElementById('root')
 );

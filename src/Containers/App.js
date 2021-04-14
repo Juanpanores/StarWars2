@@ -55,7 +55,7 @@ function App() {
     if (fighter.length===2) {
       setTimeout(() => {
         setMatch(true)                                                        //starts the match fase
-      }, 1500); 
+      }, 1000); 
     }
   },[fighter])
 
@@ -82,22 +82,24 @@ function App() {
         survivors.push(fighter[1])
         console.log("2 lives")
       }
-
+      console.log("end fight")
       setNewCardsInHand(newCardsInHand.concat(survivors))  //sets the surviving cards back in the hand
-      setGraveyard(deaths)                                 //put dead cards in the graveyard
+      if (deaths.length != 0){
+      setGraveyard(deaths)}                                //put dead cards in the graveyard
+      console.log("set fighters to cero")
       setFight([]);                                        //clear fighters from the encounter
-      
+      setMatch(false)
     }
   },[match])
 
 
-  useEffect(() => {
-      setMatch(false)                                     //ends the fighting phase
-  },[graveyard])
+ 
 
 
   console.log("Cards in deck ",deck.length)
   console.log("Cards in hand ",newCardsInHand.length)
+  console.log(fighter)
+  console.log(match)
 
   return (deck.length===0 && newCardsInHand.length===1 && fighter.length===0) ?   //sets the winning status
   <h3 className='tc win'>YOU WIN!</h3>:   
