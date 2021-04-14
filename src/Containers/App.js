@@ -19,7 +19,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('http://swapi.py4e.com/api/people/')
+    fetch('https://swapi.py4e.com/api/people/')
     .then(response => response.json())
     .then(people=> {setDeck(people.results.sort(() => 0.5 - Math.random()))}); // brings the SWAPI structure and shuffles the deck
     let sound = new Howl({                                                     //music player
