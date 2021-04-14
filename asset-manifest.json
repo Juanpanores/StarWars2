@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/starwars2/static/css/main.9ec74830.chunk.css",
-    "main.js": "/starwars2/static/js/main.475b708a.chunk.js",
-    "main.js.map": "/starwars2/static/js/main.475b708a.chunk.js.map",
-    "runtime-main.js": "/starwars2/static/js/runtime-main.ffc7eeef.js",
-    "runtime-main.js.map": "/starwars2/static/js/runtime-main.ffc7eeef.js.map",
-    "static/css/2.fe359a49.chunk.css": "/starwars2/static/css/2.fe359a49.chunk.css",
-    "static/js/2.52749c67.chunk.js": "/starwars2/static/js/2.52749c67.chunk.js",
-    "static/js/2.52749c67.chunk.js.map": "/starwars2/static/js/2.52749c67.chunk.js.map",
-    "static/js/3.601b66fb.chunk.js": "/starwars2/static/js/3.601b66fb.chunk.js",
-    "static/js/3.601b66fb.chunk.js.map": "/starwars2/static/js/3.601b66fb.chunk.js.map",
-    "index.html": "/starwars2/index.html",
-    "static/css/2.fe359a49.chunk.css.map": "/starwars2/static/css/2.fe359a49.chunk.css.map",
-    "static/css/main.9ec74830.chunk.css.map": "/starwars2/static/css/main.9ec74830.chunk.css.map",
-    "static/js/2.52749c67.chunk.js.LICENSE.txt": "/starwars2/static/js/2.52749c67.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/starwars2/static/media/Barna Break.492802fb.woff",
-    "static/media/Music.4210094a.mp3": "/starwars2/static/media/Music.4210094a.mp3"
+    "main.css": "/StarWars2/static/css/main.197166e5.chunk.css",
+    "main.js": "/StarWars2/static/js/main.475b708a.chunk.js",
+    "main.js.map": "/StarWars2/static/js/main.475b708a.chunk.js.map",
+    "runtime-main.js": "/StarWars2/static/js/runtime-main.8a692664.js",
+    "runtime-main.js.map": "/StarWars2/static/js/runtime-main.8a692664.js.map",
+    "static/css/2.fe359a49.chunk.css": "/StarWars2/static/css/2.fe359a49.chunk.css",
+    "static/js/2.52749c67.chunk.js": "/StarWars2/static/js/2.52749c67.chunk.js",
+    "static/js/2.52749c67.chunk.js.map": "/StarWars2/static/js/2.52749c67.chunk.js.map",
+    "static/js/3.601b66fb.chunk.js": "/StarWars2/static/js/3.601b66fb.chunk.js",
+    "static/js/3.601b66fb.chunk.js.map": "/StarWars2/static/js/3.601b66fb.chunk.js.map",
+    "index.html": "/StarWars2/index.html",
+    "static/css/2.fe359a49.chunk.css.map": "/StarWars2/static/css/2.fe359a49.chunk.css.map",
+    "static/css/main.197166e5.chunk.css.map": "/StarWars2/static/css/main.197166e5.chunk.css.map",
+    "static/js/2.52749c67.chunk.js.LICENSE.txt": "/StarWars2/static/js/2.52749c67.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/StarWars2/static/media/Barna Break.492802fb.woff",
+    "static/media/Music.4210094a.mp3": "/StarWars2/static/media/Music.4210094a.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.ffc7eeef.js",
+    "static/js/runtime-main.8a692664.js",
     "static/css/2.fe359a49.chunk.css",
     "static/js/2.52749c67.chunk.js",
-    "static/css/main.9ec74830.chunk.css",
+    "static/css/main.197166e5.chunk.css",
     "static/js/main.475b708a.chunk.js"
   ]
 }
